@@ -16,8 +16,8 @@ await mongoClient.connect();
 
 console.info("Connected to MongoDB");
 
-const mongoDB = mongoClient.db(" ");
-const ContactsCollection = mongoDB.collection<ContactModel>("Usuarios");
+const mongoDB = mongoClient.db("Agenda1");
+const ContactsCollection = mongoDB.collection<ContactModel>("Contactos");
 
 const server = new ApolloServer({
   typeDefs: schema,
