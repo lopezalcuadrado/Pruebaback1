@@ -17,7 +17,7 @@ await mongoClient.connect();
 console.info("Connected to MongoDB");
 
 const mongoDB = mongoClient.db(" ");
-const UsersCollection = mongoDB.collection<ContactModel>("Usuarios");
+const ContactsCollection = mongoDB.collection<ContactModel>("Usuarios");
 
 const server = new ApolloServer({
   typeDefs: schema,
@@ -25,7 +25,7 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-  context: async () => ({ UsersCollection}),
+  context: async () => ({ ContactsCollection}),
 });
 
 console.info(`Server ready at ${url}`);
