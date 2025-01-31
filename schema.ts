@@ -11,7 +11,7 @@ type Query{
     getContacts:[Contact!]!
 }
 type Mutation{
-    addContact(id:ID!):Contact!
+    addContact(name: String!, phone: String!): Contact!
     deleteContact(id:ID!):Boolean!
     updateOne(id:ID!,name:String!,phone:String!):Contact!
 }`
